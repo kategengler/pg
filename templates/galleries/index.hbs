@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="small-12 small-centered columns">
+        <h1>Katie's Photos</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <ul class="breadcrumbs">
+            <li>{{#linkTo "galleries"}}Galleries{{/linkTo}}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 small-centered columns">
+        <ul class="large-block-grid-5">
+          {{#each gallery in controller}}
+              <li>
+                {{gallery.title}}
+                <!--{{#linkTo "gallery" gallery}}-->
+                    <!--<img class="th" {{bindAttr src="photos.firstObject.thumbnailSrc"}}>-->
+                    <!--<span>{{gallery.title}}</span>-->
+                <!--{{/linkTo}}-->
+              </li>
+          {{/each}}
+        </ul>
+    </div>
+</div>

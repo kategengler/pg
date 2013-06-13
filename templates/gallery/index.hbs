@@ -4,10 +4,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="small-12 columns">
+    <div class="small-10 columns">
         <ul class="breadcrumbs">
-            <li>{{#linkTo "galleries"}}Galleries{{/linkTo}}</li>
+            <li>{{#linkTo "gallery.index"}}Galleries{{/linkTo}}</li>
         </ul>
+    </div>
+    <div class="small-2 columns">
+        {{# linkTo "gallery.new" }}Add a gallery{{/linkTo}}
     </div>
 </div>
 <div class="row">
@@ -16,10 +19,7 @@
           {{#each gallery in controller}}
               <li>
                 {{gallery.title}}
-                <!--{{#linkTo "gallery" gallery}}-->
-                    <!--<img class="th" {{bindAttr src="photos.firstObject.thumbnailSrc"}}>-->
-                    <!--<span>{{gallery.title}}</span>-->
-                <!--{{/linkTo}}-->
+
               </li>
           {{/each}}
         </ul>

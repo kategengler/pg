@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="small-12 small-centered columns">
+        <h1>Add a gallery!</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 small-centered columns">
+        <form>
+            <fieldset>
+              {{input value=title placeholder="Title"}}
+              {{input value=url placeholder="URL"}}
+              {{input value=numPhotos placeholder="Number of Photos"}}
+              <button {{action "importPhotos"}}>Import Photos</button>
+
+
+            </fieldset>
+            {{# if photos}}
+              <h3>Gallery Preview</h3>
+              <button {{action "createGallery"}}>Create Gallery</button>
+            {{/if}}
+            <div class="row">
+                <div class="small-12 small-centered columns">
+                    <ul class="large-block-grid-5">
+                      {{#each photos}}
+                          <li><img class="th" {{bindAttr src="thumbnailSrc"}}></li>
+                      {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

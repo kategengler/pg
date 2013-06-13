@@ -7,29 +7,73 @@ Pg.Store = DS.Store.extend({
 });
 
 Pg.Router.map(function() {
-  this.resource('galleries', { path: '/' }, function(){
-    this.route('new')
+  this.resource('gallery', function(){
+    this.route('new');
   });
 });
 
-Pg.GalleriesIndexRoute = Ember.Route.extend({
+Pg.ApplicationRoute = Ember.Route.extend({
+   redirect: function(){
+     this.transitionTo('gallery.index');
+   }
+});
+
+Pg.GalleryIndexRoute = Ember.Route.extend({
   model: function(){
     return Pg.Gallery.find();
   }
 });
 
-Pg.GalleriesNewRoute = Ember.Route.extend({
+Pg.GalleryNewRoute = Ember.Route.extend({
   model: function(){
-    return Pg.Gallery.createRecord()
+    return Pg.Gallery.createRecord();
   }
+});
+
+Pg.GalleryNewController = Ember.ObjectController.extend({
+  importPhotos: function(){
+    var url = this.get('url');
+    for(var i=1; i < this.get('numPhotos'); i++){
+      var thumbnailSrc = "%@/thumbs/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2));
+      var photo = Pg.Photo.createRecord({
+        thumbnailSrc: thumbnailSrc,
+        originalSrc: "%@/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2)),
+        gallery: this.get('content')
+      });
+      photo.save();
+      this.get('photos').pushObject(photo);
+    }
+  },
+  createGallery: function(){
+    this.get('content').save();
+    this.transitionToRoute("gallery.index");
+  }
+
 });
 
 Pg.Gallery = DS.Model.extend({
   title: DS.attr('string'),
-//  photos: DS.hasMany('Pg.Photo'),
+  url: DS.attr('string'),
+  photos: DS.hasMany('Pg.Photo'),
   date: DS.attr('date')
 });
 
-Pg.Gallery.FIXTURES = [
-  {id: 1, title: 'Planting Fields', photos: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27], date: new Date()}
-];
+Pg.Photo = DS.Model.extend({
+  thumbnailSrc: DS.attr('string'),
+  originalSrc: DS.attr('string'),
+  gallery: DS.belongsTo('Pg.Gallery'),
+  byline: DS.attr('string'),
+  description: DS.attr('string')
+});
+
+Pg.Helpers = {
+  pad: function(number, length) {
+    var str = '' + number;
+    while (str.length < length) {
+      str = '0' + str;
+    }
+
+    return str;
+
+  }
+};

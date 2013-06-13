@@ -9,6 +9,7 @@ Pg.Store = DS.Store.extend({
 Pg.Router.map(function() {
   this.resource('gallery', function(){
     this.route('new');
+    this.route('show', {path: '/:gallery_id'})
   });
 });
 
@@ -72,8 +73,6 @@ Pg.Helpers = {
     while (str.length < length) {
       str = '0' + str;
     }
-
     return str;
-
   }
 };

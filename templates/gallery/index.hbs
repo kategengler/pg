@@ -10,7 +10,7 @@
         </ul>
     </div>
     <div class="small-2 columns">
-        {{# linkTo "gallery.new" }}Add a gallery{{/linkTo}}
+        {{#linkTo "gallery.new"}}Add a gallery{{/linkTo}}
     </div>
 </div>
 <div class="row">
@@ -18,8 +18,10 @@
         <ul class="large-block-grid-5">
           {{#each gallery in controller}}
               <li>
-                {{gallery.title}}
-
+                {{#linkTo "gallery.show" gallery}}
+                    <img class="th" {{bindAttr src="gallery.photos.firstObject.thumbnailSrc"}}>
+                    <span>{{title}}</span>
+                {{/linkTo}}
               </li>
           {{/each}}
         </ul>

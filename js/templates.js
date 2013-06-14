@@ -14,12 +14,14 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
 Ember.TEMPLATES['galleries'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Ember.Handlebars.helpers; data = data || {};
-  var hashTypes, hashContexts, escapeExpression=this.escapeExpression;
+  var buffer = '', hashTypes, hashContexts, escapeExpression=this.escapeExpression;
 
 
+  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h1>Katie's Photos</h1>\n    </div>\n</div>\n\n");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "outlet", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  return buffer;
   
 });
 
@@ -197,7 +199,7 @@ function program8(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h1>Katie's Photos</h1>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-10 columns\">\n        <ul class=\"breadcrumbs\">\n            <li>");
+  data.buffer.push("\n<div class=\"row\">\n    <div class=\"small-10 columns\">\n        <ul class=\"breadcrumbs\">\n            <li>");
   hashTypes = {};
   hashContexts = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
@@ -274,7 +276,7 @@ function program7(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h1>Add a gallery!</h1>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
+  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h2>Add a gallery!</h2>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
   hashContexts = {'value': depth0};
   hashTypes = {'value': "ID"};
   options = {hash:{

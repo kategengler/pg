@@ -7,31 +7,33 @@ Pg.Store = DS.Store.extend({
 });
 
 Pg.Router.map(function() {
-  this.resource('gallery', function(){
+  this.route('index', {path: '/'});
+  this.resource('galleries', function(){
     this.route('new');
     this.route('show', {path: '/:gallery_id'})
   });
+  this.resource('photo', {path: '/photos/:photo_id'});
 });
 
-Pg.ApplicationRoute = Ember.Route.extend({
+Pg.IndexRoute = Ember.Route.extend({
    redirect: function(){
-     this.transitionTo('gallery.index');
+     this.transitionTo('galleries.index');
    }
 });
 
-Pg.GalleryIndexRoute = Ember.Route.extend({
+Pg.GalleriesIndexRoute = Ember.Route.extend({
   model: function(){
     return Pg.Gallery.find();
   }
 });
 
-Pg.GalleryNewRoute = Ember.Route.extend({
+Pg.GalleriesNewRoute = Ember.Route.extend({
   model: function(){
     return Pg.Gallery.createRecord();
   }
 });
 
-Pg.GalleryNewController = Ember.ObjectController.extend({
+Pg.GalleriesNewController = Ember.ObjectController.extend({
   importPhotos: function(){
     var url = this.get('url');
     for(var i=1; i < this.get('numPhotos'); i++){

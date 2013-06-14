@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="small-12 columns">
+        <h1>{{gallery.title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <ul class="breadcrumbs">
+            <li>{{#linkTo "galleries.index"}}Galleries{{/linkTo}}</li>
+            <li>{{#linkTo "galleries.show" gallery}}{{gallery.title}}{{/linkTo}}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="small-9 columns">
+        <a {{bindAttr href="originalSrc"}}>
+            <img class="th" {{bindAttr src="originalSrc"}}>
+        </a>
+    </div>
+</div>

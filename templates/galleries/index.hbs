@@ -6,11 +6,11 @@
 <div class="row">
     <div class="small-10 columns">
         <ul class="breadcrumbs">
-            <li>{{#linkTo "gallery.index"}}Galleries{{/linkTo}}</li>
+            <li>{{#linkTo "galleries.index"}}Galleries{{/linkTo}}</li>
         </ul>
     </div>
     <div class="small-2 columns">
-        {{#linkTo "gallery.new"}}Add a gallery{{/linkTo}}
+        {{#linkTo "galleries.new"}}Add a gallery{{/linkTo}}
     </div>
 </div>
 <div class="row">
@@ -18,9 +18,9 @@
         <ul class="large-block-grid-5">
           {{#each gallery in controller}}
               <li>
-                {{#linkTo "gallery.show" gallery}}
+                {{#linkTo "galleries.show" gallery}}
                     <img class="th" {{bindAttr src="gallery.photos.firstObject.thumbnailSrc"}}>
-                    <span>{{title}}</span>
+                    <span>{{gallery.title}}</span>
                 {{/linkTo}}
               </li>
           {{/each}}

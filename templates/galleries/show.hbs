@@ -6,8 +6,8 @@
 <div class="row">
     <div class="small-12 columns">
         <ul class="breadcrumbs">
-            <li>{{#linkTo "gallery.index"}}Galleries{{/linkTo}}</li>
-            <li>{{#linkTo "gallery.show" this}}{{title}}{{/linkTo}}</li>
+            <li>{{#linkTo "galleries.index"}}Galleries{{/linkTo}}</li>
+            <li>{{#linkTo "galleries.show" this}}{{title}}{{/linkTo}}</li>
         </ul>
     </div>
 </div>
@@ -15,7 +15,7 @@
     <div class="small-12 small-centered columns">
         <ul class="large-block-grid-5">
           {{#each photos}}
-              <li><img class="th" {{bindAttr src="thumbnailSrc"}}></li>
+              <li>{{#linkTo "photo" this}}<img class="th" {{bindAttr src="thumbnailSrc"}}>{{/linkTo}}</li>
           {{/each}}
         </ul>
     </div>

@@ -34,6 +34,13 @@ Pg.GalleriesNewRoute = Ember.Route.extend({
 });
 
 Pg.PhotoController = Ember.ObjectController.extend({
+  edit: function(){
+    this.set('isEditing', true);
+  },
+  doneEditing: function(){
+    this.get('model').save();
+    this.set('isEditing', false);
+  },
   delete: function(){
     var photo = this.get('model');
     photo.deleteRecord();

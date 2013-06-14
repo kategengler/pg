@@ -16,12 +16,22 @@
         <a {{bindAttr href="originalSrc"}}>
             <img class="th" {{bindAttr src="originalSrc"}}>
         </a>
-        <span class="byline">{{byline}}</span>
+        {{#if isEditing}}
+          {{input value=byline class="byline"}}
+        {{else}}
+          <span class="byline">{{byline}}</span>
+        {{/if}}
     </div>
     <div class="small-3 columns">
         <div class="panel">
           <h6>Description</h6>
-          <p>{{description}}</p>
+          {{#if isEditing}}
+            {{input type="textarea" value=description}}
+            <button {{action "doneEditing"}}>Done</button>
+          {{else}}
+            <p>{{description}}</p>
+            <button {{action "edit"}}>Edit</button>
+          {{/if}}
         </div>
     </div>
 </div>

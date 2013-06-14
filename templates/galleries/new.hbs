@@ -10,11 +10,13 @@
               {{input value=title placeholder="Title"}}
               {{input value=url placeholder="URL"}}
               {{input value=numPhotos placeholder="Number of Photos"}}
+              {{input value=defaultByline placeholder="Default Byline"}}
+              {{input value=defaultDescription placeholder="Default Description"}}
               <button {{action "importPhotos"}}>Import Photos</button>
 
 
             </fieldset>
-            {{# if photos}}
+            {{#if photos}}
               <h3>Gallery Preview</h3>
               <button {{action "createGallery"}}>Create Gallery</button>
             {{/if}}

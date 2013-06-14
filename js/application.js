@@ -38,10 +38,13 @@ Pg.GalleriesNewController = Ember.ObjectController.extend({
     var url = this.get('url');
     for(var i=1; i < this.get('numPhotos'); i++){
       var thumbnailSrc = "%@/thumbs/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2));
+
       var photo = Pg.Photo.createRecord({
         thumbnailSrc: thumbnailSrc,
         originalSrc: "%@/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2)),
-        gallery: this.get('content')
+        gallery: this.get('content'),
+        description: this.get('defaultDescription'),
+        byline: this.get('defaultByline')
       });
       photo.save();
       this.get('photos').pushObject(photo);
@@ -49,7 +52,7 @@ Pg.GalleriesNewController = Ember.ObjectController.extend({
   },
   createGallery: function(){
     this.get('content').save();
-    this.transitionToRoute("gallery.index");
+    this.transitionToRoute("galleries.index");
   }
 
 });

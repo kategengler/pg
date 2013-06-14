@@ -133,7 +133,7 @@ function program6(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "galleries.new", options) : helperMissing.call(depth0, "linkTo", "galleries.new", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <ul class=\"large-block-grid-5\">\n          ");
+  data.buffer.push("\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n\n        <ul class=\"large-block-grid-5\">\n          ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers.each.call(depth0, "gallery", "in", "controller", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
@@ -194,6 +194,22 @@ function program3(depth0,data) {
   options = {hash:{
     'value': ("numPhotos"),
     'placeholder': ("Number of Photos")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("\n              ");
+  hashContexts = {'value': depth0,'placeholder': depth0};
+  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  options = {hash:{
+    'value': ("defaultByline"),
+    'placeholder': ("Default Byline")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
+  data.buffer.push("\n              ");
+  hashContexts = {'value': depth0,'placeholder': depth0};
+  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  options = {hash:{
+    'value': ("defaultDescription"),
+    'placeholder': ("Default Description")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n              <button ");

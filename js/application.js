@@ -33,6 +33,14 @@ Pg.GalleriesNewRoute = Ember.Route.extend({
   }
 });
 
+Pg.PhotoController = Ember.ObjectController.extend({
+  delete: function(){
+    var photo = this.get('model');
+    photo.deleteRecord();
+    this.store.commit();
+  }
+});
+
 Pg.GalleriesNewController = Ember.ObjectController.extend({
   importPhotos: function(){
     var url, i, imageName, photo;
@@ -60,7 +68,7 @@ Pg.GalleriesNewController = Ember.ObjectController.extend({
     }, 500);
   },
   createGallery: function(){
-    this.get('content').save();
+    this.get('model').save();
     this.transitionToRoute("galleries.index");
   }
 

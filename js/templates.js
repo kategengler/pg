@@ -1,4 +1,3 @@
-
 Ember.TEMPLATES['application'] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [3,'>= 1.0.0-rc.4'];
 helpers = helpers || Ember.Handlebars.helpers; data = data || {};
@@ -170,17 +169,17 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
 function program1(depth0,data) {
   
   
-  data.buffer.push("\n                <button><span class=\"icon-spin5 animate-spin\"></span></button>\n              ");
+  data.buffer.push("\n                  <button><span class=\"icon-spin5 animate-spin\"></span></button>\n                ");
   }
 
 function program3(depth0,data) {
   
   var buffer = '', hashTypes, hashContexts;
-  data.buffer.push("\n                <button ");
+  data.buffer.push("\n                  <button ");
   hashTypes = {};
   hashContexts = {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "importPhotos", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Import Photos</button>\n              ");
+  data.buffer.push(">Import Photos</button>\n                ");
   return buffer;
   }
 
@@ -198,70 +197,71 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = '', hashContexts, hashTypes;
-  data.buffer.push("\n                          <li><img class=\"th\" ");
+  data.buffer.push("\n                          <li>\n                              <img class=\"th\" ");
   hashContexts = {'src': depth0};
   hashTypes = {'src': "STRING"};
   data.buffer.push(escapeExpression(helpers.bindAttr.call(depth0, {hash:{
     'src': ("thumbnailSrc")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("></li>\n                      ");
+  data.buffer.push(">\n                              <a ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "delete", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(" class=\"icon-cancel\"></a>\n                          </li>\n                      ");
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h1>Add a gallery!</h1>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <form>\n            <fieldset>\n              ");
-  hashContexts = {'value': depth0,'placeholder': depth0};
-  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h1>Add a gallery!</h1>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
   options = {hash:{
-    'value': ("title"),
-    'placeholder': ("Title")
+    'value': ("title")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n              ");
-  hashContexts = {'value': depth0,'placeholder': depth0};
-  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  data.buffer.push("\n              <label>URL</label>\n              ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
   options = {hash:{
-    'value': ("url"),
-    'placeholder': ("URL")
+    'value': ("url")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n              ");
-  hashContexts = {'value': depth0,'placeholder': depth0};
-  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  data.buffer.push("\n              <label>Number of Photos</label>\n              ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
   options = {hash:{
-    'value': ("numPhotos"),
-    'placeholder': ("Number of Photos")
+    'value': ("numPhotos")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n              ");
-  hashContexts = {'value': depth0,'placeholder': depth0};
-  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  data.buffer.push("\n              <label>Default Byline</label>\n              ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
   options = {hash:{
-    'value': ("defaultByline"),
-    'placeholder': ("Default Byline")
+    'value': ("defaultByline")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n              ");
-  hashContexts = {'value': depth0,'placeholder': depth0};
-  hashTypes = {'value': "ID",'placeholder': "STRING"};
+  data.buffer.push("\n              <label>Default Description</label>\n              ");
+  hashContexts = {'value': depth0};
+  hashTypes = {'value': "ID"};
   options = {hash:{
-    'value': ("defaultDescription"),
-    'placeholder': ("Default Description")
+    'value': ("defaultDescription")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n\n              ");
+  data.buffer.push("\n\n              <div>\n                ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "importingPhotos", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n            </fieldset>\n            ");
+  data.buffer.push("\n              </div>\n            </fieldset>\n            ");
   hashTypes = {};
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n            <div class=\"row\">\n                <div class=\"small-12 small-centered columns\">\n                    <ul class=\"large-block-grid-5\">\n                      ");
-  hashTypes = {};
-  hashContexts = {};
-  stack2 = helpers.each.call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  hashContexts = {'itemController': depth0};
+  hashTypes = {'itemController': "STRING"};
+  stack2 = helpers.each.call(depth0, "photos", {hash:{
+    'itemController': ("photo")
+  },inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n                    </ul>\n                </div>\n            </div>\n        </form>\n    </div>\n</div>");
   return buffer;

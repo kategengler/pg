@@ -7,17 +7,24 @@
     <div class="small-12 small-centered columns">
         <form>
             <fieldset>
-              {{input value=title placeholder="Title"}}
-              {{input value=url placeholder="URL"}}
-              {{input value=numPhotos placeholder="Number of Photos"}}
-              {{input value=defaultByline placeholder="Default Byline"}}
-              {{input value=defaultDescription placeholder="Default Description"}}
+              <label>Title</label>
+              {{input value=title}}
+              <label>URL</label>
+              {{input value=url}}
+              <label>Number of Photos</label>
+              {{input value=numPhotos}}
+              <label>Default Byline</label>
+              {{input value=defaultByline}}
+              <label>Default Description</label>
+              {{input value=defaultDescription}}
 
-              {{#if importingPhotos}}
-                <button><span class="icon-spin5 animate-spin"></span></button>
-              {{else}}
-                <button {{action "importPhotos"}}>Import Photos</button>
-              {{/if}}
+              <div>
+                {{#if importingPhotos}}
+                  <button><span class="icon-spin5 animate-spin"></span></button>
+                {{else}}
+                  <button {{action "importPhotos"}}>Import Photos</button>
+                {{/if}}
+              </div>
             </fieldset>
             {{#if photos}}
               <h3>Gallery Preview</h3>
@@ -26,8 +33,11 @@
             <div class="row">
                 <div class="small-12 small-centered columns">
                     <ul class="large-block-grid-5">
-                      {{#each photos}}
-                          <li><img class="th" {{bindAttr src="thumbnailSrc"}}></li>
+                      {{#each photos itemController="photo"}}
+                          <li>
+                              <img class="th" {{bindAttr src="thumbnailSrc"}}>
+                              <a {{action "delete"}} class="icon-cancel"></a>
+                          </li>
                       {{/each}}
                     </ul>
                 </div>

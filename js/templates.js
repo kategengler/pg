@@ -169,6 +169,23 @@ helpers = helpers || Ember.Handlebars.helpers; data = data || {};
 
 function program1(depth0,data) {
   
+  
+  data.buffer.push("\n                <button><span class=\"icon-spin5 animate-spin\"></span></button>\n              ");
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', hashTypes, hashContexts;
+  data.buffer.push("\n                <button ");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "importPhotos", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">Import Photos</button>\n              ");
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
   var buffer = '', hashTypes, hashContexts;
   data.buffer.push("\n              <h3>Gallery Preview</h3>\n              <button ");
   hashTypes = {};
@@ -178,7 +195,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
+function program7(depth0,data) {
   
   var buffer = '', hashContexts, hashTypes;
   data.buffer.push("\n                          <li><img class=\"th\" ");
@@ -231,19 +248,20 @@ function program3(depth0,data) {
     'placeholder': ("Default Description")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n              <button ");
+  data.buffer.push("\n\n              ");
   hashTypes = {};
   hashContexts = {};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "importPhotos", {hash:{},contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">Import Photos</button>\n\n\n            </fieldset>\n            ");
+  stack2 = helpers['if'].call(depth0, "importingPhotos", {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n            </fieldset>\n            ");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers['if'].call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers['if'].call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n            <div class=\"row\">\n                <div class=\"small-12 small-centered columns\">\n                    <ul class=\"large-block-grid-5\">\n                      ");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers.each.call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers.each.call(depth0, "photos", {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n                    </ul>\n                </div>\n            </div>\n        </form>\n    </div>\n</div>");
   return buffer;

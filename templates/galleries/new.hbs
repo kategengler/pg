@@ -12,9 +12,12 @@
               {{input value=numPhotos placeholder="Number of Photos"}}
               {{input value=defaultByline placeholder="Default Byline"}}
               {{input value=defaultDescription placeholder="Default Description"}}
-              <button {{action "importPhotos"}}>Import Photos</button>
 
-
+              {{#if importingPhotos}}
+                <button><span class="icon-spin5 animate-spin"></span></button>
+              {{else}}
+                <button {{action "importPhotos"}}>Import Photos</button>
+              {{/if}}
             </fieldset>
             {{#if photos}}
               <h3>Gallery Preview</h3>

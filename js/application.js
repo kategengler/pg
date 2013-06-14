@@ -35,13 +35,17 @@ Pg.GalleriesNewRoute = Ember.Route.extend({
 
 Pg.GalleriesNewController = Ember.ObjectController.extend({
   importPhotos: function(){
-    var url = this.get('url');
-    for(var i=1; i < this.get('numPhotos'); i++){
-      var thumbnailSrc = "%@/thumbs/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2));
+    var url, i, imageName, photo;
 
-      var photo = Pg.Photo.createRecord({
-        thumbnailSrc: thumbnailSrc,
-        originalSrc: "%@/%@.jpg".fmt(url, Pg.Helpers.pad(i, 2)),
+    this.set('importingPhotos', true);
+    url = this.get('url');
+
+    for (i = 1; i < this.get('numPhotos'); i++) {
+      imageName = Pg.Helpers.pad(i, 2);
+
+      photo = Pg.Photo.createRecord({
+        thumbnailSrc: "%@/thumbs/%@.jpg".fmt(url, imageName),
+        originalSrc: "%@/%@.jpg".fmt(url, imageName),
         gallery: this.get('content'),
         description: this.get('defaultDescription'),
         byline: this.get('defaultByline')
@@ -49,6 +53,11 @@ Pg.GalleriesNewController = Ember.ObjectController.extend({
       photo.save();
       this.get('photos').pushObject(photo);
     }
+
+    // Timer to simulate delay from server requests
+    Ember.run.later(this, function(){
+      this.set('importingPhotos', false)
+    }, 500);
   },
   createGallery: function(){
     this.get('content').save();

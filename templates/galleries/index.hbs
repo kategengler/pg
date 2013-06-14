@@ -15,7 +15,9 @@
 </div>
 <div class="row">
     <div class="small-12 small-centered columns">
-
+        {{#unless controller.length}}
+          No galleries yet, go create one!
+        {{/unless}}
         <ul class="large-block-grid-5">
           {{#each gallery in controller}}
               <li>

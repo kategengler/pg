@@ -4255,3 +4255,12 @@ a.th {
     max-width: 500px; }
   .f-dropdown.large {
     max-width: 800px; }
+
+.active {
+  font-weight: bold; }
+
+.byline {
+  font-size: 0.6875em;
+  float: right;
+  text-transform: uppercase;
+  padding-top: 0.3em; }

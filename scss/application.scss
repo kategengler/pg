@@ -1,1 +1,12 @@
 @import 'vendor/foundation';
+
+.active {
+  font-weight: bold;
+}
+
+.byline {
+  font-size: 0.6875em;
+  float: right;
+  text-transform: uppercase;
+  padding-top: 0.3em;
+}

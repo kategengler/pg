@@ -276,7 +276,7 @@ function program7(depth0,data) {
   return buffer;
   }
 
-  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h2>Add a gallery!</h2>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
+  data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h2>Add a gallery!</h2>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <p>\n          Imports a gallery with files named sequentially starting with 01.jpg, expects\n            there to be a subdirectory named 'thumbs' with corresponding thumbnails named the same as the original photos.\n            You also need to say how many photos to import.\n        </p>\n      <p>Example URL: <b>https://dl.dropboxusercontent.com/u/38141173/galleries/planting_fields</b> with <b>27</b> photos.</p>\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
   hashContexts = {'value': depth0};
   hashTypes = {'value': "ID"};
   options = {hash:{

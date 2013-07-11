@@ -14,15 +14,15 @@
         <form>
             <fieldset>
               <label>Title</label>
-              {{input value=title}}
+              {{input value=title class="js-title-input"}}
               <label>URL</label>
-              {{input value=url}}
+              {{input value=url class="js-url-input"}}
               <label>Number of Photos</label>
-              {{input value=numPhotos}}
+              {{input value=numPhotos class="js-num-photos-input"}}
               <label>Default Byline</label>
-              {{input value=defaultByline}}
+              {{input value=defaultByline class="js-default-byline-input"}}
               <label>Default Description</label>
-              {{input value=defaultDescription}}
+              {{input value=defaultDescription class="js-default-description-input"}}
 
               <div>
                 {{#if importingPhotos}}

@@ -60,7 +60,7 @@ Pg.GalleriesNewController = Ember.ObjectController.extend({
     // and the number of photos. In a system with a real backend,
     // you'd upload photos then use their URLs.
 
-    for (i = 1; i < this.get('numPhotos'); i++) {
+    for (i = 1; i <= this.get('numPhotos'); i++) {
       imageName = Pg.Helpers.pad(i, 2);
 
       photo = Pg.Photo.createRecord({

@@ -277,38 +277,43 @@ function program7(depth0,data) {
   }
 
   data.buffer.push("<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <h2>Add a gallery!</h2>\n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"small-12 small-centered columns\">\n        <p>\n          Imports a gallery with files named sequentially starting with 01.jpg, expects\n            there to be a subdirectory named 'thumbs' with corresponding thumbnails named the same as the original photos.\n            You also need to say how many photos to import.\n        </p>\n      <p>Example URL: <b>https://dl.dropboxusercontent.com/u/38141173/galleries/planting_fields</b> with <b>27</b> photos.</p>\n        <form>\n            <fieldset>\n              <label>Title</label>\n              ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "ID"};
+  hashContexts = {'value': depth0,'class': depth0};
+  hashTypes = {'value': "ID",'class': "STRING"};
   options = {hash:{
-    'value': ("title")
+    'value': ("title"),
+    'class': ("js-title-input")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n              <label>URL</label>\n              ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "ID"};
+  hashContexts = {'value': depth0,'class': depth0};
+  hashTypes = {'value': "ID",'class': "STRING"};
   options = {hash:{
-    'value': ("url")
+    'value': ("url"),
+    'class': ("js-url-input")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n              <label>Number of Photos</label>\n              ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "ID"};
+  hashContexts = {'value': depth0,'class': depth0};
+  hashTypes = {'value': "ID",'class': "STRING"};
   options = {hash:{
-    'value': ("numPhotos")
+    'value': ("numPhotos"),
+    'class': ("js-num-photos-input")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n              <label>Default Byline</label>\n              ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "ID"};
+  hashContexts = {'value': depth0,'class': depth0};
+  hashTypes = {'value': "ID",'class': "STRING"};
   options = {hash:{
-    'value': ("defaultByline")
+    'value': ("defaultByline"),
+    'class': ("js-default-byline-input")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n              <label>Default Description</label>\n              ");
-  hashContexts = {'value': depth0};
-  hashTypes = {'value': "ID"};
+  hashContexts = {'value': depth0,'class': depth0};
+  hashTypes = {'value': "ID",'class': "STRING"};
   options = {hash:{
-    'value': ("defaultDescription")
+    'value': ("defaultDescription"),
+    'class': ("js-default-description-input")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n\n              <div>\n                ");

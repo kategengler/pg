@@ -15,6 +15,9 @@ Then reload your browser.
 
 ## Development
 
+### Tests
+* To run tests, open tests/index.html in your browser. Be sure all javascripts included in the app are included there, and be sure the compiled templates.js is up-to-date.
+
 ### Makes use of: 
 * [ember.js](https://github.com/emberjs/ember.js)
 * [ember-data](https://github.com/emberjs/data/)
@@ -22,6 +25,7 @@ Then reload your browser.
 * [Fontello](http://fontello.com/)
 * [Zurb Foundation](https://github.com/zurb/foundation)
 * [ember-tools](https://github.com/rpflorence/ember-tools)
+* [QUnit](http://qunitjs.com/)
 
 
 ### Template Compilation
